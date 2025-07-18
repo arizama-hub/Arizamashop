@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arizama Shop</title>
   <style>
     body {
@@ -43,6 +43,15 @@
       margin: 10px 0;
       border-left: 5px solid #ff004f;
       border-radius: 8px;
+      cursor: pointer;
+    }
+    .harga {
+      display: none;
+      background-color: #2a2a2a;
+      padding: 10px 20px;
+      border-left: 3px solid #ff004f;
+      margin-bottom: 10px;
+      border-radius: 5px;
     }
     .wa-button {
       display: block;
@@ -61,6 +70,12 @@
       background-color: #128C7E;
     }
   </style>
+  <script>
+    function toggleHarga(id) {
+      var el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </head>
 <body>
 
@@ -77,13 +92,29 @@
 
 <section>
   <h2>Layanan Top Up Game</h2>
-  <div class="product">🔥 Mobile Legends</div>
+
+  <div class="product" onclick="toggleHarga('mlbb')">🔥 Mobile Legends</div>
+  <div id="mlbb" class="harga">
+    <p>💎 5 Diamond - Rp 2.000</p>
+    <p>💎 12 Diamond - Rp 5.000</p>
+    <p>💎 28 Diamond - Rp 10.000</p>
+    <p>💎 59 Diamond - Rp 17.000</p>
+    <p>💎 85 Diamond - Rp 24.000</p>
+    <p>💎 100 Diamond - Rp 30.000</p>
+    <p>💎 WDP - Rp 28.000</p>
+  </div>
+
   <div class="product">🔥 Free Fire</div>
   <div class="product">🔥 PUBG Mobile</div>
   <div class="product">🔥 Valorant</div>
 
   <h2>Pulsa All Operator</h2>
-  <div class="product">📱 Telkomsel, XL, Indosat, Tri, Smartfren</div>
+
+  <div class="product" onclick="toggleHarga('pulsa')">📱 Telkomsel, XL, Indosat, Tri, Smartfren</div>
+  <div id="pulsa" class="harga">
+    <p>📱 Telkomsel 5rb - Rp 6.500</p>
+    <p>📱 Telkomsel 10rb - Rp 11.500</p>
+  </div>
 
   <a class="wa-button" href="https://wa.me/6289619342995" target="_blank">
     💬 Chat Admin via WhatsApp
